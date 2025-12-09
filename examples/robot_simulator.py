@@ -7,7 +7,6 @@ Publishes dummy joint states that the GUI can connect to.
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import JointState
-from builtin_interfaces.msg import Time
 import math
 
 

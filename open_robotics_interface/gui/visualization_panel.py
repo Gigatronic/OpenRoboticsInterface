@@ -2,6 +2,7 @@
 Visualization Panel for displaying robot state and trajectories.
 """
 
+import subprocess
 from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QGroupBox,
     QPushButton, QLabel, QTextEdit, QCheckBox
@@ -144,7 +145,6 @@ class VisualizationPanel(QWidget):
     
     def launch_rviz(self):
         """Launch RViz2 for 3D visualization."""
-        import subprocess
         try:
             subprocess.Popen(['rviz2'], 
                            stdout=subprocess.DEVNULL, 

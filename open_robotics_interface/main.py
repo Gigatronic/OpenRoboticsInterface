@@ -4,6 +4,7 @@ Main entry point for the OpenRoboticsInterface application.
 """
 
 import sys
+import threading
 import rclpy
 from rclpy.executors import MultiThreadedExecutor
 from PyQt5.QtWidgets import QApplication
@@ -33,7 +34,6 @@ def main(args=None):
     executor.add_node(robot_controller)
     
     # Start ROS 2 spinning in background
-    import threading
     ros_thread = threading.Thread(target=executor.spin, daemon=True)
     ros_thread.start()
     
